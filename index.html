@@ -1,0 +1,82 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+document.body.style.backgroundColor = '#6F4E37';
+
+var banana = document.createElement('img');
+banana.src = 'https://www.pngall.com/wp-content/uploads/2016/04/Banana-Free-Download-PNG.png';
+document.body.appendChild(banana);
+
+banana.addEventListener('click', function() {
+  var youClicked = document.createElement('div');
+  youClicked.innerHTML = 'You clicked';
+  document.body.appendChild(youClicked);
+  setTimeout(function() {
+    document.body.removeChild(youClicked);
+  }, 300);
+});
+
+banana.style.top = '50%';
+banana.style.marginTop = '-50px';
+
+var monkeySound = new Audio('https://archive.org/download/MonkeySounds/monkey1.mp3');
+banana.addEventListener('click', function() {
+  monkeySound.play();
+});
+
+var score = 0;
+var scoreDisplay = document.createElement('div');
+scoreDisplay.innerHTML = score;
+document.body.appendChild(scoreDisplay);
+banana.addEventListener('click', function() {
+  score += 3;
+  scoreDisplay.innerHTML = score;
+});
+
+scoreDisplay.style.fontSize = '40pt';
+
+var monkey = document.createElement('img');
+monkey.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg';
+document.body.appendChild(monkey);
+
+var mom = document.createElement('div');
+mom.innerHTML = 'I shot your mom';
+document.body.appendChild(mom);
+mom.style.position = 'absolute';
+mom.style.top = '50%';
+mom.style.left = '50%';
+mom.style.marginTop = '-50px';
+mom.style.marginLeft = '-100px';
+mom.style.fontSize = '40pt';
+mom.style.display = 'none';
+setInterval(function() {
+  mom.style.display = 'block';
+  setTimeout(function() {
+    mom.style.display = 'none';
+  }, 1000);
+}, 10000);
+
+setInterval(function() {
+  document.body.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+}, 50);
+
+setInterval(function() {
+  monkey.style.top = Math.random() * 100 + '%';
+  monkey.style.left = Math.random() * 100 + '%';
+  monkey.style.marginTop = -50 + Math.random() * 100 + 'px';
+  monkey.style.marginLeft = -50 + Math.random() * 100 + 'px';
+}, 50);
+
+monkey.style.position = 'absolute';
+monkey.style.top = '50%';
+monkey.style.left = '50%';
+monkey.style.marginTop = '-50px';
+monkey.style.marginLeft = '-50px';
+});
+        </script>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+</html>
